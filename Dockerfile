@@ -1,3 +1,10 @@
+FROM alpine:latest as base
+
+WORKDIR /app
+
+RUN apk add --no-cache lighttpd
+
+
 FROM node:22-alpine as build
 
 WORKDIR /app
@@ -10,10 +17,12 @@ COPY . /app
 
 RUN npm run build
 
-FROM nginx:alpine
+FROM base as final
 
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist /app
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+RUN sed -i 's|server.document-root *=.*|server.document-root = "/app"|' /etc/lighttpd/lighttpd.conf
+
+CMD ["lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]
