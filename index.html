@@ -2,12 +2,93 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Argon VoIP</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      html, body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      main {
+        flex-grow: 1;
+      }
+    </style>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+  <body class="bg-gray-900 text-white">
+    <header class="bg-gray-800 p-4">
+      <nav class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold">Argon VoIP</a>
+        <ul class="flex space-x-4">
+          <li><a href="#downloads" class="hover:text-teal-400">Downloads</a></li>
+          <li><a href="#enterprise" class="hover:text-teal-400">Enterprise Solutions</a></li>
+          <li><a href="#about" class="hover:text-teal-400">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container mx-auto p-4">
+      <!-- Downloads Section -->
+      <section id="downloads" class="my-8">
+        <h2 class="text-3xl font-bold mb-4">Downloads</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <button class="bg-teal-500 text-white py-2 px-4 rounded">Windows (v1.0, 50MB)</button>
+          <button class="bg-gray-700 text-gray-400 py-2 px-4 rounded" disabled>Linux (Cumming Soon)</button>
+          <button class="bg-gray-700 text-gray-400 py-2 px-4 rounded" disabled>Mac (Cumming Soon)</button>
+          <button class="bg-gray-700 text-gray-400 py-2 px-4 rounded" disabled>iOS (Cumming Soon)</button>
+          <button class="bg-gray-700 text-gray-400 py-2 px-4 rounded" disabled>Android (Cumming Soon)</button>
+          <button class="bg-gray-700 text-gray-400 py-2 px-4 rounded" disabled>Xbox (Cumming Soon)</button>
+          <button class="bg-gray-700 text-gray-400 py-2 px-4 rounded" disabled>SteamOS (Cumming Soon)</button>
+        </div>
+      </section>
+
+      <!-- Enterprise Solutions Section -->
+      <section id="enterprise" class="my-8">
+        <h2 class="text-3xl font-bold mb-4">Enterprise Solutions</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Free Plan -->
+          <div class="bg-gray-800 p-4 rounded">
+            <h3 class="text-2xl font-bold mb-2">Free Plan (Self-Hosted)</h3>
+            <p>No cost</p>
+            <ul class="list-disc list-inside">
+              <li>Community support</li>
+              <li>Basic security</li>
+              <li>Self-management capabilities</li>
+              <li>Limited scalability</li>
+            </ul>
+          </div>
+          <!-- Managed Plan -->
+          <div class="bg-gray-800 p-4 rounded">
+            <h3 class="text-2xl font-bold mb-2">Managed Plan</h3>
+            <p>Monthly subscription</p>
+            <ul class="list-disc list-inside">
+              <li>24/7 technical support</li>
+              <li>Advanced security options</li>
+              <li>Automatic updates</li>
+              <li>Scalable infrastructure</li>
+            </ul>
+          </div>
+          <!-- Contact Sales -->
+          <div class="bg-gray-800 p-4 rounded">
+            <h3 class="text-2xl font-bold mb-2">Contact Sales</h3>
+            <p>Custom enterprise-level solution</p>
+            <button class="bg-teal-500 text-white py-2 px-4 rounded">Contact Us</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="about" class="my-8">
+        <h2 class="text-3xl font-bold mb-4">About Us</h2>
+        <p>Company overview, mission statement, key differentiators, and more.</p>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 p-4 text-center">
+      <p>&copy; 2023 Argon VoIP. All rights reserved.</p>
+    </footer>
   </body>
 </html>
