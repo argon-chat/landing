@@ -8,7 +8,7 @@
     "baseUrl": "{domain}/pkg/argon/{platform}/{channel}/{version}/{package}",
     "manifest": "version.{channel}.json",
     "self": {
-        "latestHash": "sha256:e892776d519508730817352ac202af728748c31bf8b51e580bd6560d723f4462",
+        "latestHash": "sha256:6575652806dd668ea670ad85a20eda68c767a3f4f2fc91c5bd147e749e073163",
         "url": "{domain}/ArgonChat_Setup.exe"
     }
 }
