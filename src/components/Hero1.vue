@@ -59,8 +59,8 @@
             </div>
             <div class="flex flex-wrap gap-4 text-xs sm:text-sm">
                 <a href="https://github.com/argon-chat" class="hover:text-neutral-200 transition-colors">Github</a>
-                <!-- <a href="/privacy" class="hover:text-neutral-200 transition-colors">Privacy Policy</a>
-                <a href="/legal" class="hover:text-neutral-200 transition-colors">Legal</a> -->
+                <a href="https://github.com/argon-chat/legal/blob/master/tos/en.md" class="hover:text-neutral-200 transition-colors">Term Of Service</a>
+                <a href="https://github.com/argon-chat/legal/blob/master/privacy/en.md" class="hover:text-neutral-200 transition-colors">Privacy</a>
             </div>
         </div>
     </footer>
