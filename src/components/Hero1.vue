@@ -25,13 +25,16 @@
 
         <div v-if="showModal"
             class="fixed inset-0 z-[100] flex size-full items-center justify-center backdrop-blur-2xl">
-            <div
+            <div ref="modalRef"
                 class="relative flex h-[250px] w-[500px] flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
                 <div class="w-full w-full h-full rounded-lg bg-black p-6 shadow-xl">
                     <h2 class="mb-4 text-xl font-semibold text-white" style="text-align: center;">Enroll in Beta</h2>
                     <IInput v-model="email" type="email" placeholder="Enter your email" />
                     <div v-if="error" class="mb-2 text-red-600 text-sm">{{ error }}</div>
-                    <br/>
+                    <div v-if="successMessage" class="mt-4 text-green-500 text-sm text-center">
+                        {{ successMessage }}
+                    </div>
+                    <br />
                     <div class="flex justify-center gap-2">
                         <RainbowButton @click="submitEmail" :disabled="loading">
                             {{ loading ? 'Submitting...' : 'Submit' }}
@@ -49,27 +52,46 @@
     </Transition>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
 import BlurReveal from "./BlurReveal.vue";
 import BorderBeam from "./BorderBeam.vue";
 import FallingStarsBg from "./FallingStarsBg.vue";
-import FlipWords from "./FlipWords.vue";
-import bg from "../assets/argon-img.png"
 import Header from "./Header.vue";
 import RainbowButton from "./RainbowButton.vue";
 import IInput from "./IInput.vue";
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const showModal = ref(false)
 const email = ref('')
 const loading = ref(false)
 const success = ref(false)
+const successMessage = ref('')
 const error = ref('')
+const modalRef = ref<HTMLElement | null>(null)
+
 const openModal = () => {
     showModal.value = true
     email.value = ''
     error.value = ''
     success.value = false
 }
+
+const closeModal = () => {
+    showModal.value = false
+}
+
+const handleClickOutside = (event: MouseEvent) => {
+    if (showModal.value && modalRef.value && !modalRef.value.contains(event.target as Node)) {
+        closeModal()
+    }
+}
+
+onMounted(() => {
+    document.addEventListener('mousedown', handleClickOutside)
+})
+
+onBeforeUnmount(() => {
+    document.removeEventListener('mousedown', handleClickOutside)
+})
 
 const submitEmail = async () => {
     if (!email.value || !email.value.includes('@')) {
@@ -80,7 +102,7 @@ const submitEmail = async () => {
     loading.value = true
     error.value = ''
     try {
-        const res = await fetch('https://api.argon.gl/api/enroll-beta', {
+        const res = await fetch('https://enroll.argon.gl', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: email.value })
@@ -90,10 +112,13 @@ const submitEmail = async () => {
 
         success.value = true
         showModal.value = false
+        successMessage.value = 'Success! You’ve been added to the enroll queue. Please wait for your invitation 😊'
     } catch (err) {
         error.value = 'Failed to submit. Try again later.'
     } finally {
         loading.value = false
     }
 }
+
+
 </script>
