@@ -1,0 +1,30 @@
+{
+  "name": "src",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/vue": "^5.0.11",
+    "@inspira-ui/plugins": "^0.0.1",
+    "@lucide/astro": "^0.503.0",
+    "@tailwindcss/vite": "^4.1.4",
+    "@vueuse/core": "^13.1.0",
+    "astro": "^5.7.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cobe": "^0.6.3",
+    "dotted-map": "^2.2.3",
+    "lucide-vue-next": "^0.503.0",
+    "motion-v": "^1.0.0-beta.3",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.4",
+    "tailwindcss-animate": "^1.0.7",
+    "vue": "^3.5.13",
+    "vue-use-spring": "^0.3.3"
+  }
+}
