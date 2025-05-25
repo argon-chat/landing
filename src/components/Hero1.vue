@@ -111,8 +111,10 @@ const submitEmail = async () => {
         if (!res.ok) throw new Error('Submission failed')
 
         success.value = true
-        showModal.value = false
-        successMessage.value = 'Success! You’ve been added to the enroll queue. Please wait for your invitation 😊'
+        successMessage.value = 'Success! You’ve been added to the enroll queue. Please wait for your invitation 😊';
+        setTimeout(() => {
+            showModal.value = false
+        }, 5000);
     } catch (err) {
         error.value = 'Failed to submit. Try again later.'
     } finally {
