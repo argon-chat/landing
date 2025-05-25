@@ -10,7 +10,6 @@
         </Motion>
     </div>
 </template>
-
 <script setup lang="ts">
 import { Motion } from "motion-v";
 import { ref, onMounted, watchEffect, useSlots } from "vue";
