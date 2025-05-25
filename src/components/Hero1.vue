@@ -27,7 +27,7 @@
         <div v-if="showModal"
             class="fixed inset-0 z-[100] flex size-full items-center justify-center backdrop-blur-2xl">
             <div ref="modalRef"
-                class="relative flex h-[250px] w-[500px] flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+                class="relative flex h-[300px] w-[500px] flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
                 <div class="w-full w-full h-full rounded-lg bg-black p-6 shadow-xl">
                     <h2 class="mb-4 text-xl font-semibold text-white" style="text-align: center;">Enroll in Beta</h2>
                     <IInput v-model="email" type="email" placeholder="Enter your email" />
@@ -41,6 +41,16 @@
                             {{ loading ? 'Submitting...' : 'Submit' }}
                         </RainbowButton>
                     </div>
+                    <p class="mt-4 text-xs text-center text-neutral-400 max-w-sm leading-snug justify-center" style="min-width: 100%;">
+                        By enrolling, you consent to the storage of your email, IP address, and country for the purpose
+                        of
+                        participating in the beta.
+                        See our
+                        <a href="https://github.com/argon-chat/legal/blob/master/privacy/en.md" target="_blank" class="underline hover:text-neutral-200 transition">Privacy Policy</a> for
+                        more
+                        details.
+                    </p>
+                    <br />
                 </div>
                 <BorderBeam :size="250" :duration="10" :delay="1" :border-width="2" />
             </div>
@@ -58,9 +68,11 @@
                 © {{ new Date().getFullYear() }} Argon Inc. All rights reserved.
             </div>
             <div class="flex flex-wrap gap-4 text-xs sm:text-sm">
-                <a href="https://github.com/argon-chat" class="hover:text-neutral-200 transition-colors">Github</a>
-                <a href="https://github.com/argon-chat/legal/blob/master/tos/en.md" class="hover:text-neutral-200 transition-colors">Term Of Service</a>
-                <a href="https://github.com/argon-chat/legal/blob/master/privacy/en.md" class="hover:text-neutral-200 transition-colors">Privacy</a>
+                <a target="_blank" href="https://github.com/argon-chat" class="hover:text-neutral-200 transition-colors">Github</a>
+                <a target="_blank" href="https://github.com/argon-chat/legal/blob/master/tos/en.md"
+                    class="hover:text-neutral-200 transition-colors">Term Of Service</a>
+                <a target="_blank" href="https://github.com/argon-chat/legal/blob/master/privacy/en.md"
+                    class="hover:text-neutral-200 transition-colors">Privacy</a>
             </div>
         </div>
     </footer>
