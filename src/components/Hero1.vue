@@ -41,12 +41,14 @@
                             {{ loading ? 'Submitting...' : 'Submit' }}
                         </RainbowButton>
                     </div>
-                    <p class="mt-4 text-xs text-center text-neutral-400 max-w-sm leading-snug justify-center" style="min-width: 100%;">
+                    <p class="mt-4 text-xs text-center text-neutral-400 max-w-sm leading-snug justify-center"
+                        style="min-width: 100%;">
                         By enrolling, you consent to the storage of your email, IP address, and country for the purpose
                         of
                         participating in the beta.
                         See our
-                        <a href="https://github.com/argon-chat/legal/blob/master/privacy/en.md" target="_blank" class="underline hover:text-neutral-200 transition">Privacy Policy</a> for
+                        <a href="https://github.com/argon-chat/legal/blob/master/privacy/en.md" target="_blank"
+                            class="underline hover:text-neutral-200 transition">Privacy Policy</a> for
                         more
                         details.
                     </p>
@@ -68,11 +70,15 @@
                 © {{ new Date().getFullYear() }} Argon Inc. All rights reserved.
             </div>
             <div class="flex flex-wrap gap-4 text-xs sm:text-sm">
-                <a target="_blank" href="https://github.com/argon-chat" class="hover:text-neutral-200 transition-colors">Github</a>
+                <a target="_blank" href="https://github.com/argon-chat"
+                    class="hover:text-neutral-200 transition-colors">Github</a>
                 <a target="_blank" href="https://github.com/argon-chat/legal/blob/master/tos/en.md"
                     class="hover:text-neutral-200 transition-colors">Term Of Service</a>
                 <a target="_blank" href="https://github.com/argon-chat/legal/blob/master/privacy/en.md"
                     class="hover:text-neutral-200 transition-colors">Privacy</a>
+                <a target="_blank" href="https://status.argon.gl"
+                    class="hover:text-neutral-200 transition-colors">System Status</a>
+                
             </div>
         </div>
     </footer>
