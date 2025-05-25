@@ -16,12 +16,6 @@
                     </RainbowButton>
                 </div>
                 <br />
-
-                <div
-                    class="relative flex h-fit w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background p-px md:shadow-xl">
-                    <img :src="bg.src" class="w-full rounded-md" />
-                    <BorderBeam :size="250" :duration="12" :delay="9" :border-width="2" />
-                </div>
             </BlurReveal>
         </div>
     </section>
