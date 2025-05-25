@@ -18,6 +18,7 @@
                 <br />
             </BlurReveal>
         </div>
+
     </section>
     <Transition enter-active-class="transition-opacity duration-300" enter-from-class="opacity-0"
         enter-to-class="opacity-100" leave-active-class="transition-opacity duration-300" leave-from-class="opacity-100"
@@ -50,6 +51,19 @@
         </div>
 
     </Transition>
+    <footer style="    bottom: 0;position: fixed;"
+        class="relative z-[2] mt-auto w-full border-t border-white/10 bg-black/40 px-6 py-6 text-center text-sm text-neutral-400 backdrop-blur">
+        <div class="max-w-4xl mx-auto flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
+            <div class="text-xs sm:text-sm">
+                © {{ new Date().getFullYear() }} Argon Inc. All rights reserved.
+            </div>
+            <div class="flex flex-wrap gap-4 text-xs sm:text-sm">
+                <a href="https://github.com/argon-chat" class="hover:text-neutral-200 transition-colors">Github</a>
+                <!-- <a href="/privacy" class="hover:text-neutral-200 transition-colors">Privacy Policy</a>
+                <a href="/legal" class="hover:text-neutral-200 transition-colors">Legal</a> -->
+            </div>
+        </div>
+    </footer>
 </template>
 <script setup lang="ts">
 import BlurReveal from "./BlurReveal.vue";
