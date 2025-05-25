@@ -108,7 +108,12 @@ const submitEmail = async () => {
             body: JSON.stringify({ email: email.value })
         })
 
-        if (!res.ok) throw new Error('Submission failed')
+        if (res.status === 451) {
+            error.value = 'Your region is not supported for enrollment.'
+            return
+        }
+
+        if (!res.ok) throw new Error('Submission failed');
 
         success.value = true
         successMessage.value = 'Success! You’ve been added to the enroll queue. Please wait for your invitation 😊';
