@@ -1,5 +1,5 @@
 <template>
-    <div class="relative   rounded-lg bg-white font-sans dark:bg-black  ">
+    <div class="relative rounded-lg font-sans bg-black  ">
         <img :src="`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`"
             class="pointer-events-none size-full select-none [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)]"
             alt="world map" style="height: 495px; width: 1056px;" height="495" width="1056" :draggable="false" />

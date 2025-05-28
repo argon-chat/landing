@@ -1,7 +1,7 @@
 <template>
     <div
-        class="flex h-[20rem] w-full flex-col items-center justify-center overflow-hidden rounded-md bg-white dark:bg-black">
-        <h1 class="relative z-20 text-center text-3xl font-bold text-black lg:text-9xl md:text-7xl dark:text-white">
+        class="flex h-[20rem] w-full flex-col items-center justify-center overflow-hidden rounded-md bg-black">
+        <h1 class="relative z-20 text-center text-3xl font-bold lg:text-9xl md:text-7xl text-white">
             Argon Chat
             <span class="minecraft-subtitle">Also try Skype 😊</span>
         </h1>
@@ -19,17 +19,16 @@
                 class="size-full" :particle-color="particlesColor" />
 
             <div
-                class="absolute inset-0 size-full bg-white [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)] dark:bg-black">
+                class="absolute inset-0 size-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]">
             </div>
         </div>
     </div>
 </template>
 <script setup lang="ts">
 import { computed } from "vue";
-import { useColorMode } from "@vueuse/core";
 import Sparkles from "./Sparkles.vue";
 
-const particlesColor = computed(() => (useColorMode().value === "dark" ? "#FFFFFF" : "#000000"));
+const particlesColor = computed(() =>  "#FFFFFF");
 </script>
 <style>
 @keyframes minecraft-pulse {

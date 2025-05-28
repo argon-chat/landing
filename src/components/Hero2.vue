@@ -2,7 +2,7 @@
     <div class="flex flex-col overflow-hidden">
         <ContainerScroll>
             <template #title>
-                <h1 class="text-4xl font-semibold text-black dark:text-white">
+                <h1 class="text-4xl font-semibold text-white">
                     Unleash the power of <br />
                     <span class="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
                         Social Activity

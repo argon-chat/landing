@@ -57,7 +57,7 @@
                 <BorderBeam :size="250" :duration="10" :delay="1" :border-width="2" />
             </div>
 
-            <div class="absolute inset-x-0 bottom-0 z-20 h-full bg-white bg-gradient-to-t [mask-image:radial-gradient(900px_at_center,transparent_30%,white)] dark:bg-black"
+            <div class="absolute inset-x-0 bottom-0 z-20 h-full bg-gradient-to-t [mask-image:radial-gradient(900px_at_center,transparent_30%,white)] bg-black"
                 style="z-index: -5;">
             </div>
         </div>
