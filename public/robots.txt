@@ -1,0 +1,7 @@
+# Allow all crawlers to index the site
+User-agent: *
+Allow: /
+
+Disallow: /_astro/
+Disallow: /build/
+Disallow: /assets/private/
