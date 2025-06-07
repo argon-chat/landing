@@ -5,3 +5,6 @@ Allow: /
 Disallow: /_astro/
 Disallow: /build/
 Disallow: /assets/private/
+
+Sitemap: https://argon.gl/sitemap-index.xml
+Sitemap: https://argon.gl/sitemap-0.xml
