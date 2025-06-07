@@ -6,10 +6,78 @@ import "../styles/global.css";
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <title>Argon Chat — Secure, Realtime & Beautiful Messaging</title>
+    <meta name="description" content="Argon Chat — end-to-end encrypted chat platform with real-time sync, multi-device support, and elegant UI." />
+    <meta name="keywords" content="
+      argon chat, secure chat, real-time chat, encrypted messaging, websocket chat, chat app, p2p chat, 
+      decentralized chat, open source chat, privacy chat, fast messaging, private messaging, group chat, 
+      dm chat, chat with reactions, discord alternative, slack alternative, whatsapp alternative, 
+      secure communication, real-time communication, vue chat, typescript chat, dexie chat, indexeddb chat, 
+      orleans chat, .net chat backend, wasm chat client, electron chat, cef chat app, offline messaging, 
+      progressive web chat, anonymous messaging, ephemeral chat, chat with mentions, markdown chat, 
+      custom emoji chat, cross-platform messaging, browser-based chat, headless chat ui, custom chat engine, 
+      low latency messaging, distributed messaging, scalable chat, chat sdk, chat api, 
+      argon, argon chat, argon messaging, argon secure chat
+      ">
+    <meta name="author" content="Argon Inc. LLC" />
+
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Argon Chat" />
+    <meta property="og:description" content="Secure, realtime messaging with a beautiful UI. Join Argon Chat now." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://argon.gl/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Argon Chat" />
+    <meta name="twitter:description" content="Secure, realtime messaging with a beautiful UI." />
+    <meta name="twitter:creator" content="@argonchat" />
+
+     <!-- Theme -->
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)" />
+
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+     <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+
+    <!-- Robots and Crawlers -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="yandex" content="index, follow">
+
+    <!-- Telegram-specific preview (not standard, but useful for bots) -->
+    <meta name="telegram:channel" content="@argon_ru_news" />
+    <meta name="telegram:description" content="End-to-end encrypted chat platform." />
+
+    <!-- Cache Control (optional) -->
+    <!-- <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate" /> -->
+
+
+    <!-- SEO -->
+    <meta name="application-name" content="Argon Chat" />
+    <meta name="apple-mobile-web-app-title" content="Argon Chat" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="rating" content="general" />
+
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://argon.gl/" />
   </head>
   <body class="bg-black">
     <slot />
