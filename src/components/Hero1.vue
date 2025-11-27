@@ -31,9 +31,12 @@
                 <div class="w-full w-full h-full rounded-lg bg-black p-6 shadow-xl">
                     <h2 class="mb-4 text-xl font-semibold text-white" style="text-align: center;">Enroll in Beta</h2>
                     <IInput v-model="email" type="email" placeholder="Enter your email" />
-                    <!-- ✅ TURNSTILE CAPTCHA -->
-                    <div ref="captchaRef" class="cf-turnstile mt-4" data-sitekey="0x4AAAAAAA0DPoxKcBNZt4vC"
+                    
+                     <div class="w-full flex justify-center mt-4">
+                        <div ref="captchaRef" class="cf-turnstile mt-4" data-sitekey="0x4AAAAAAA0DPoxKcBNZt4vC"
                         data-theme="dark"></div>
+                     </div>
+                    
                     <div v-if="error" class="mb-2 text-red-600 text-sm">{{ error }}</div>
                     <div v-if="successMessage" class="mt-4 text-green-500 text-sm text-center">
                         {{ successMessage }}
