@@ -31,6 +31,9 @@
                 <div class="w-full w-full h-full rounded-lg bg-black p-6 shadow-xl">
                     <h2 class="mb-4 text-xl font-semibold text-white" style="text-align: center;">Enroll in Beta</h2>
                     <IInput v-model="email" type="email" placeholder="Enter your email" />
+                    <!-- ✅ TURNSTILE CAPTCHA -->
+                    <div ref="captchaRef" class="cf-turnstile mt-4" data-sitekey="0x4AAAAAAA0DPoxKcBNZt4vC"
+                        data-theme="dark"></div>
                     <div v-if="error" class="mb-2 text-red-600 text-sm">{{ error }}</div>
                     <div v-if="successMessage" class="mt-4 text-green-500 text-sm text-center">
                         {{ successMessage }}
@@ -78,7 +81,7 @@
                     class="hover:text-neutral-200 transition-colors">Privacy</a>
                 <a target="_blank" href="https://status.argon.gl"
                     class="hover:text-neutral-200 transition-colors">System Status</a>
-                
+
             </div>
         </div>
     </footer>
@@ -90,7 +93,7 @@ import FallingStarsBg from "./FallingStarsBg.vue";
 import Header from "./Header.vue";
 import RainbowButton from "./RainbowButton.vue";
 import IInput from "./IInput.vue";
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 
 const showModal = ref(false)
 const email = ref('')
@@ -99,13 +102,29 @@ const success = ref(false)
 const successMessage = ref('')
 const error = ref('')
 const modalRef = ref<HTMLElement | null>(null)
+const captchaRef = ref<HTMLElement | null>(null)
+let captchaToken = ''
 
-const openModal = () => {
+
+const openModal = async () => {
     showModal.value = true
     email.value = ''
     error.value = ''
     success.value = false
+
+    await nextTick();
+
+    if ((window as any)["turnstile"] && captchaRef.value) {
+        (window as any).turnstile.render(captchaRef.value, {
+            sitekey: "0x4AAAAAAA0DPoxKcBNZt4vC",
+            theme: "dark",
+            callback: (token: string) => {
+                captchaToken = token
+            }
+        })
+    }
 }
+
 
 const closeModal = () => {
     showModal.value = false
@@ -118,6 +137,14 @@ const handleClickOutside = (event: MouseEvent) => {
 }
 
 onMounted(() => {
+    if (!document.getElementById("turnstile-script")) {
+        const script = document.createElement("script")
+        script.id = "turnstile-script"
+        script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js"
+        script.async = true
+        document.body.appendChild(script)
+    }
+
     document.addEventListener('mousedown', handleClickOutside)
 })
 
@@ -137,26 +164,29 @@ const submitEmail = async () => {
         const res = await fetch('https://enroll.argon.gl', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email.value })
-        })
+            body: JSON.stringify({
+                email: email.value,
+                turnstile: captchaToken
+             })
+    })
 
-        if (res.status === 451) {
-            error.value = 'Your region is not supported for enrollment.'
-            return
-        }
-
-        if (!res.ok) throw new Error('Submission failed');
-
-        success.value = true
-        successMessage.value = 'Success! You’ve been added to the enroll queue. Please wait for your invitation 😊';
-        setTimeout(() => {
-            showModal.value = false
-        }, 5000);
-    } catch (err) {
-        error.value = 'Failed to submit. Try again later.'
-    } finally {
-        loading.value = false
+    if (res.status === 451) {
+        error.value = 'Your region is not supported for enrollment.'
+        return
     }
+
+    if (!res.ok) throw new Error('Submission failed');
+
+    success.value = true
+    successMessage.value = 'Success! You’ve been added to the enroll queue. Please wait for your invitation 😊';
+    setTimeout(() => {
+        showModal.value = false
+    }, 5000);
+} catch (err) {
+    error.value = 'Failed to submit. Try again later.'
+} finally {
+    loading.value = false
+}
 }
 
 
