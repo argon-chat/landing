@@ -27,7 +27,7 @@
         <div v-if="showModal"
             class="fixed inset-0 z-[100] flex size-full items-center justify-center backdrop-blur-2xl">
             <div ref="modalRef"
-                class="relative flex h-[300px] w-[500px] flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+                class="relative flex h-[350px] w-[600px] flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
                 <div class="w-full w-full h-full rounded-lg bg-black p-6 shadow-xl">
                     <h2 class="mb-4 text-xl font-semibold text-white" style="text-align: center;">Enroll in Beta</h2>
                     <IInput v-model="email" type="email" placeholder="Enter your email" />
