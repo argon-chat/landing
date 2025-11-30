@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 ---
+
 <!--
 ⡯⣞⡽⣺⢽⣺⢽⡳⡯⡯⣞⣽⣳⢯⢯⣞⡽⣳⢯⢯⣞⡽⣳⢯⢯⣗⡯⣯⢞⣽⣳⢯⢯⣗⡯⣯⢗⣯⢯⣞⡽⣺⢽⡺⡽⣺⢽⣺⢽⡺⡝⠣⠱⢪⢪⣪⣪⣪⣪⣪⣪⢬⣪⢜⢜⣘⣌⣮⣬⣬⣬⣬⣬⣎⠪⣈⣫⡭⣭⢏⡻⢻⢿⣿⢶⡙⡷⣫⡗⠅⡢⢊⢆⠕⡌⢆⠕⢌⠆⢕⢌⠆⢕⢌⠢⡑⢔⠔⡡⠫⢺⢕⢽⡪⡳⡳⡹⣪⡳⣹
 ⡯⣗⡯⡯⣗⢷⣫⢾⣫⣟⣵⢗⡷⣫⡷⣳⢯⢯⢯⣗⢷⣫⡯⣯⢗⡷⣫⢷⣻⡺⣺⢽⣳⣳⢯⣗⣟⣞⣗⣗⡯⣯⢗⣯⡻⡝⣕⣣⣧⣷⣾⣾⣿⢿⣻⣾⣷⣿⢷⢟⣚⣭⣶⣿⣻⣾⢿⣷⢿⣻⠿⣙⣵⣶⣿⣫⣎⡮⡮⣪⢎⢮⢲⡩⡻⠿⢎⠅⠅⠣⠊⢌⠆⢕⢌⢆⠣⡃⡕⢅⢆⠣⡑⡔⡑⢕⠡⡑⡌⡪⡂⡌⠳⡹⡹⣪⢯⡪⣺⢜
@@ -74,6 +75,9 @@ import "../styles/global.css";
       name="description"
       content="Argon Chat — end-to-end encrypted chat platform with real-time sync, multi-device support, and elegant UI."
     />
+    <link rel="preconnect" href="https://challenges.cloudflare.com" />
+    <link rel="preconnect" href="https://mc.yandex.ru" />
+    <link rel="preconnect" href="https://static.cloudflareinsights.com" />
     <meta
       name="keywords"
       content="
@@ -89,13 +93,17 @@ import "../styles/global.css";
       "
     />
     <meta name="author" content="Argon Inc. LLC" />
-
+    <meta name="color-scheme" content="dark" />
+    <meta name="twitter:site" content="@argonchat" />
+    <meta name="instagram:site" content="@argonchat" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Open Graph -->
     <meta property="og:title" content="Argon Chat" />
     <meta
       property="og:description"
       content="Secure, realtime messaging with a beautiful UI. Join Argon Chat now."
     />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://argon.gl/" />
 
@@ -120,6 +128,18 @@ import "../styles/global.css";
       media="(prefers-color-scheme: light)"
     />
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Argon Chat",
+        "url": "https://argon.gl",
+        "applicationCategory": "CommunicationApplication",
+        "operatingSystem": "Any",
+        "description": "End-to-end encrypted, realtime chat platform with beautiful UI."
+      }
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
@@ -130,7 +150,10 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
 
     <!-- Robots and Crawlers -->
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer></script>
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -138,8 +161,18 @@ import "../styles/global.css";
     <meta name="googlebot" content="index, follow" />
     <meta name="bingbot" content="index, follow" />
     <meta name="yandex" content="index, follow" />
-    <link rel="sitemap" type="application/xml" title="Sitemap Index" href="/sitemap-index.xml" />
-    <link rel="sitemap" type="application/xml" title="Sitemap Page" href="/sitemap-0.xml" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap Index"
+      href="/sitemap-index.xml"
+    />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap Page"
+      href="/sitemap-0.xml"
+    />
 
     <!-- Telegram-specific preview (not standard, but useful for bots) -->
     <meta name="telegram:channel" content="@argon_ru_news" />
@@ -176,25 +209,46 @@ import "../styles/global.css";
   <noscript>
     <div style="display: none;">
       Argon Chat — encrypted real-time messaging app with support for group
-      chats, reactions, mentions, markdown, emojis.
-      Alternative to Discord, Slack, Teams, Zoom.
+      chats, reactions, mentions, markdown, emojis. Alternative to Discord,
+      Slack, Teams, Zoom.
     </div>
   </noscript>
   <!-- Yandex.Metrika counter -->
-  <script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] =
+        m[i] ||
+        function () {
+          (m[i].a = m[i].a || []).push(arguments);
+        };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
+        }
+      }
+      (k = e.createElement(t)),
+        (a = e.getElementsByTagName(t)[0]),
+        (k.async = 1),
+        (k.src = r),
+        a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
     ym(102486872, "init", {
-          clickmap:true,
-          trackLinks:true,
-          accurateTrackBounce:true
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
     });
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/102486872" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <noscript
+    ><div>
+      <img
+        src="https://mc.yandex.ru/watch/102486872"
+        style="position:absolute; left:-9999px;"
+        alt=""
+      />
+    </div></noscript
+  >
   <!-- /Yandex.Metrika counter -->
 </html>
 
@@ -206,9 +260,3 @@ import "../styles/global.css";
     height: 100%;
   }
 </style>
-<script>
-  const observer = new MutationObserver(() => {
-    console.log("class on <html>: ", document.documentElement.className);
-  });
-  observer.observe(document.documentElement, { attributes: true });
-</script>

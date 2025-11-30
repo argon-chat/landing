@@ -1,0 +1,6 @@
+/*
+  Content-Security-Policy: default-src 'self'; img-src * blob: data:; media-src * blob: data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://mc.yandex.ru https://challenges.cloudflare.com 'unsafe-inline'; connect-src *; font-src *; frame-src https://challenges.cloudflare.com;
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer-when-downgrade
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
