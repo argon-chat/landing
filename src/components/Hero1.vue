@@ -73,7 +73,7 @@
         class="relative z-[2] mt-auto w-full border-t border-white/10 bg-black/40 px-6 py-6 text-center text-sm text-neutral-400 backdrop-blur">
         <div class="max-w-4xl mx-auto flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
             <div class="text-xs sm:text-sm">
-                © {{ new Date().getFullYear() }} Argon Inc. All rights reserved.
+                © {{ new Date().getFullYear() }} Argon Inc. LLC — All rights reserved.
             </div>
             <div class="flex flex-wrap gap-4 text-xs sm:text-sm">
                 <a target="_blank" href="https://github.com/argon-chat"
