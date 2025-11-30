@@ -38,6 +38,7 @@ const speedInSeconds = computed(() => `${props.speed}s`);
     --color-5: hsl(90 100% 63%);
     --speed: v-bind(speedInSeconds);
     animation: rainbow var(--speed) infinite linear;
+    color: black !important;
 }
 
 .rainbow-button:before {
