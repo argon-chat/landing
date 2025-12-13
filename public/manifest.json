@@ -1,14 +1,18 @@
 {
-    "endpoints": [
-        "releases.argon.zone"
-    ],
-    "limitedRegions": [
-        "RU"
-    ],
-    "baseUrl": "{domain}/pkg/argon/{platform}/{channel}/{version}/{package}",
-    "manifest": "version.{channel}.json",
-    "self": {
-        "latestHash": "sha256:0b75aa0f171366e7e96770b9ec968a79f499b53cfe802e9fb6ec797ddb395774",
-        "url": "{domain}/ArgonChat_Setup.exe"
-    }
+  "endpoints": [
+    "releases.argon.zone"
+  ],
+  "limitedRegions": [
+    "RU"
+  ],
+  "baseUrl": "{domain}/pkg/argon/{platform}/{channel}/{version}/{package}",
+  "manifest": "version.{channel}.json",
+  "self": {
+    "latestHash": "sha256:0b75aa0f171366e7e96770b9ec968a79f499b53cfe802e9fb6ec797ddb395774",
+    "url": "{domain}/ArgonChat_Setup.exe"
+  }
+  "endpoints_v2": [
+      "updates.argon.gl"
+  ],
+  "componentManifest": "{component}.{channel}.json",
 }
